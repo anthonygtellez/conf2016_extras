@@ -17,7 +17,7 @@ ut_domain_without_tld!="amazonaws"
 | lookup cloud_providers domain AS ut_domain OUTPUT CDN_provider isProvider
 | where NOT isProvider="True" AND ut_shannon > 4
 
-#  or use lookup to look for bad shit
+#  or use lookup to look for bad stuff
 | lookup ddns dyndns_domains AS ut_domain OUTPUT isBad
 | where NOT isBad="True" AND ut_shannon > 4
 
